@@ -1,0 +1,309 @@
+CRITICAL - 2022-02-27 10:38:57 --> Argument 2 passed to CodeIgniter\HTTP\RedirectResponse::route() must be of the type array, object given, called in C:\xampp\htdocs\code\app\Controllers\Auth\Login.php on line 47
+#0 C:\xampp\htdocs\code\app\Controllers\Auth\Login.php(47): CodeIgniter\HTTP\RedirectResponse->route('principal/inici...', Object(App\Entities\User))
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 11:29:34 --> Cannot use object of type App\Entities\User as array
+#0 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-27 11:31:18 --> Undefined variable: sesion
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\header.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(424): CodeIgniter\View\View->render('Front/layout/he...', NULL, true)
+#4 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(10): CodeIgniter\View\View->include('Front/layout/he...')
+#5 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#8 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#9 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#12 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-02-27 11:35:02 --> Undefined index: login_name
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\footer.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 15, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(424): CodeIgniter\View\View->render('Front/layout/fo...', NULL, true)
+#4 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(12): CodeIgniter\View\View->include('Front/layout/fo...')
+#5 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#8 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#9 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#12 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-02-27 11:37:50 --> Undefined variable: session
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\header.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(424): CodeIgniter\View\View->render('Front/layout/he...', NULL, true)
+#4 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(10): CodeIgniter\View\View->include('Front/layout/he...')
+#5 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#8 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#9 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#12 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-02-27 11:48:53 --> Cannot use object of type App\Entities\User as array
+#0 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-27 11:53:06 --> Cannot use object of type App\Entities\User as array
+#0 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-27 12:27:35 --> Undefined variable: session
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\footer.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(424): CodeIgniter\View\View->render('Front/layout/fo...', NULL, true)
+#4 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(12): CodeIgniter\View\View->include('Front/layout/fo...')
+#5 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#8 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#9 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#12 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-02-27 13:24:28 --> Undefined variable: _SESSION
+#0 C:\xampp\htdocs\code\app\Views\Principal\view_first.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 46, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#4 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-27 13:26:32 --> Undefined variable: session
+#0 C:\xampp\htdocs\code\app\Views\Principal\view_first.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 46, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#4 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-27 15:05:18 --> Invalid file: Principal/view_member.php
+#0 C:\xampp\htdocs\code\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Principal/view_...')
+#1 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#2 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(16): view('Principal/view_...')
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->member()
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-27 15:06:07 --> Invalid file: Principal/view_member.php
+#0 C:\xampp\htdocs\code\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Principal/view_...')
+#1 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#2 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(16): view('Principal/view_...')
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->member()
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-27 15:06:18 --> Invalid file: Principal/view_member.php
+#0 C:\xampp\htdocs\code\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Principal/view_...')
+#1 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#2 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(16): view('Principal/view_...')
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->member()
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-27 15:06:26 --> Invalid file: Principal/view_member.php
+#0 C:\xampp\htdocs\code\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Principal/view_...')
+#1 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#2 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(16): view('Principal/view_...')
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->member()
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-27 15:10:08 --> Undefined variable: conn
+#0 C:\xampp\htdocs\code\app\Views\Principal\view_members.php(63): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#4 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(16): view('Principal/view_...')
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->member()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-27 15:10:32 --> Undefined variable: conn
+#0 C:\xampp\htdocs\code\app\Views\Principal\view_members.php(63): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 63, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#4 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(16): view('Principal/view_...')
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->member()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-27 17:37:29 --> Unknown column 'name' in 'where clause'
+CRITICAL - 2022-02-27 17:37:29 --> Unknown column 'name' in 'where clause'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\code\app\Models\UsersModel.php(25): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\code\app\Controllers\Auth\Login.php(31): App\Models\UsersModel->getUserBy('name', 'edu@gmail.com')
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#9 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-02-27 17:39:57 --> Unknown column 'name' in 'field list'
+CRITICAL - 2022-02-27 17:39:57 --> Unknown column 'name' in 'field list'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\code\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\code\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\code\system\BaseModel.php(658): CodeIgniter\Model->insert(Object(App\Entities\User), false)
+#8 C:\xampp\htdocs\code\app\Controllers\Auth\Register.php(26): CodeIgniter\BaseModel->save(Object(App\Entities\User))
+#9 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Register->index()
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-02-27 17:43:47 --> There is no data to insert.
+#0 C:\xampp\htdocs\code\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\code\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#2 C:\xampp\htdocs\code\system\BaseModel.php(658): CodeIgniter\Model->insert(Object(App\Entities\User), false)
+#3 C:\xampp\htdocs\code\app\Controllers\Auth\Register.php(26): CodeIgniter\BaseModel->save(Object(App\Entities\User))
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Register->index()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-02-27 18:21:18 --> Undefined property: App\Controllers\Auth\Register::$db
+#0 C:\xampp\htdocs\code\app\Controllers\Auth\Register.php(59): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 59, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Register->ajax_load_data()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 18:28:33 --> syntax error, unexpected '}', expecting end of file
+#0 C:\xampp\htdocs\code\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\code\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(790): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-02-27 18:29:11 --> Undefined property: App\Controllers\Principal\First_page::$db
+#0 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(39): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 39, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->ajax_load_data()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 18:31:31 --> Undefined property: App\Controllers\Principal\First_page::$db
+#0 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 40, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->ajax_load_data()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 18:32:25 --> Undefined property: App\Controllers\Principal\First_page::$db
+#0 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 38, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->ajax_load_data()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-02-27 18:35:47 --> Table 'user' already exists
+ERROR - 2022-02-27 18:38:19 --> Table 'tbl_students' already exists
+ERROR - 2022-02-27 18:38:41 --> Table 'tbl_students' already exists
+ERROR - 2022-02-27 18:39:41 --> Table 'tbl_students' already exists
+ERROR - 2022-02-27 18:40:28 --> Table 'tbl_students' already exists
+CRITICAL - 2022-02-27 19:53:45 --> Undefined property: App\Controllers\Principal\First_page::$db
+#0 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 38, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->ajax_load_data()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 20:26:43 --> Undefined property: App\Controllers\Principal\First_page::$db
+#0 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 38, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->ajax_load_data()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 21:17:43 --> Undefined index: draw
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 21:18:07 --> Undefined index: draw
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 21:19:28 --> Undefined index: draw
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 21:25:02 --> Undefined property: App\Controllers\Student::$input
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 24, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 21:25:15 --> Undefined property: App\Controllers\Student::$input
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 24, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-27 21:30:55 --> Undefined property: App\Controllers\Student::$input
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 24, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

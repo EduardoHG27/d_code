@@ -1,0 +1,88 @@
+CRITICAL - 2022-02-26 15:49:18 --> Undefined variable: _SESSION
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\header.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(424): CodeIgniter\View\View->render('Front/layout/he...', NULL, true)
+#4 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(10): CodeIgniter\View\View->include('Front/layout/he...')
+#5 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#8 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#9 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#12 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-02-26 15:50:00 --> Undefined variable: _SESSION
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\header.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 43, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(424): CodeIgniter\View\View->render('Front/layout/he...', NULL, true)
+#4 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(10): CodeIgniter\View\View->include('Front/layout/he...')
+#5 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#8 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#9 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#12 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-02-26 15:50:21 --> Undefined variable: thisrenderSection
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#4 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#5 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-02-26 15:51:21 --> Undefined variable: _SESSION
+#0 C:\xampp\htdocs\code\app\Views\Front\layout\footer.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 15, Array)
+#1 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\code\system\View\View.php(424): CodeIgniter\View\View->render('Front/layout/fo...', NULL, true)
+#4 C:\xampp\htdocs\code\app\Views\Front\layout\main.php(12): CodeIgniter\View\View->include('Front/layout/fo...')
+#5 C:\xampp\htdocs\code\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\code\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\code\system\View\View.php(226): CodeIgniter\View\View->render('Front/layout/ma...', Array, true)
+#8 C:\xampp\htdocs\code\system\Common.php(1089): CodeIgniter\View\View->render('Principal/view_...', Array, true)
+#9 C:\xampp\htdocs\code\app\Controllers\Principal\First_page.php(11): view('Principal/view_...')
+#10 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Principal\First_page->index()
+#11 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Principal\First_page))
+#12 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-02-26 15:56:33 --> Argument 2 passed to CodeIgniter\HTTP\RedirectResponse::route() must be of the type array, object given, called in C:\xampp\htdocs\code\app\Controllers\Auth\Login.php on line 47
+#0 C:\xampp\htdocs\code\app\Controllers\Auth\Login.php(47): CodeIgniter\HTTP\RedirectResponse->route('principal/inici...', Object(App\Entities\User))
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-26 15:59:03 --> Argument 2 passed to CodeIgniter\HTTP\RedirectResponse::route() must be of the type array, object given, called in C:\xampp\htdocs\code\app\Controllers\Auth\Login.php on line 47
+#0 C:\xampp\htdocs\code\app\Controllers\Auth\Login.php(47): CodeIgniter\HTTP\RedirectResponse->route('principal/inici...', Object(App\Entities\User))
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-26 15:59:43 --> Argument 2 passed to CodeIgniter\HTTP\RedirectResponse::route() must be of the type array, object given, called in C:\xampp\htdocs\code\app\Controllers\Auth\Login.php on line 47
+#0 C:\xampp\htdocs\code\app\Controllers\Auth\Login.php(47): CodeIgniter\HTTP\RedirectResponse->route('principal/inici...', Object(App\Entities\User))
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-26 16:00:11 --> Argument 2 passed to CodeIgniter\HTTP\RedirectResponse::route() must be of the type array, object given, called in C:\xampp\htdocs\code\app\Controllers\Auth\Login.php on line 47
+#0 C:\xampp\htdocs\code\app\Controllers\Auth\Login.php(47): CodeIgniter\HTTP\RedirectResponse->route('principal/inici...', Object(App\Entities\User))
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Auth\Login->signin()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -1,0 +1,174 @@
+CRITICAL - 2022-03-19 14:13:56 --> Call to undefined method App\Models\PaysModel::getResult
+#0 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(86): CodeIgniter\Model->__call('getResult', Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->chek_delete()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-19 14:16:38 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::get() must be of the type int or null, string given, called in C:\xampp\htdocs\code\system\Model.php on line 728
+#0 C:\xampp\htdocs\code\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get('array')
+#1 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(87): CodeIgniter\Model->__call('get', Array)
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->chek_delete()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-03-19 14:22:26 --> Array to string conversion
+#0 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 89, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->chek_delete()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-19 14:22:36 --> Array to string conversion
+#0 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 89, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->chek_delete()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-19 14:25:57 --> Array to string conversion
+#0 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 89, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->chek_delete()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-03-19 21:08:52 --> Table 'codeigniter.tbl_plans' doesn't exist
+CRITICAL - 2022-03-19 21:08:52 --> Table 'codeigniter.tbl_plans' doesn't exist
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(239): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->get_plan()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-03-19 21:08:52 --> Table 'codeigniter.tbl_students' doesn't exist
+CRITICAL - 2022-03-19 21:08:52 --> Table 'codeigniter.tbl_students' doesn't exist
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(219): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->ajaxLoadData()
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#9 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-03-19 21:09:59 --> Table 'codeigniter.tbl_plans' doesn't exist
+CRITICAL - 2022-03-19 21:09:59 --> Table 'codeigniter.tbl_plans' doesn't exist
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(239): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->get_plan()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-03-19 21:09:59 --> Table 'codeigniter.tbl_students' doesn't exist
+CRITICAL - 2022-03-19 21:09:59 --> Table 'codeigniter.tbl_students' doesn't exist
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(219): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->ajaxLoadData()
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#9 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-03-19 21:10:06 --> Table 'codeigniter.tbl_plans' doesn't exist
+CRITICAL - 2022-03-19 21:10:06 --> Table 'codeigniter.tbl_plans' doesn't exist
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(239): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->get_plan()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-03-19 21:10:06 --> Table 'codeigniter.tbl_students' doesn't exist
+CRITICAL - 2022-03-19 21:10:06 --> Table 'codeigniter.tbl_students' doesn't exist
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(219): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->ajaxLoadData()
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#9 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-03-19 21:31:12 --> There is no data to update.
+#0 C:\xampp\htdocs\code\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\code\system\Model.php(651): CodeIgniter\BaseModel->update(NULL, Array)
+#2 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(287): CodeIgniter\Model->update()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->store_planmember()
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-19 21:32:51 --> There is no data to update.
+#0 C:\xampp\htdocs\code\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\code\system\Model.php(651): CodeIgniter\BaseModel->update(NULL, Array)
+#2 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(287): CodeIgniter\Model->update()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->store_planmember()
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-19 21:35:03 --> There is no data to update.
+#0 C:\xampp\htdocs\code\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\code\system\Model.php(651): CodeIgniter\BaseModel->update(NULL, Array)
+#2 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(287): CodeIgniter\Model->update()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->store_planmember()
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-19 21:37:01 --> There is no data to update.
+#0 C:\xampp\htdocs\code\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\code\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\code\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(290): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->store_planmember()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-19 21:38:43 --> There is no data to update.
+#0 C:\xampp\htdocs\code\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\code\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\code\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(290): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->store_planmember()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-19 21:39:39 --> There is no data to update.
+#0 C:\xampp\htdocs\code\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\code\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\code\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\code\app\Controllers\Student\Student.php(290): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student\Student->store_planmember()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Student))
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -1,0 +1,234 @@
+CRITICAL - 2022-02-28 19:50:36 --> Undefined property: App\Controllers\Student::$load
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(802): App\Controllers\Student->__construct()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(403): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-28 19:50:44 --> Undefined property: App\Controllers\Student::$load
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(802): App\Controllers\Student->__construct()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(403): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-28 19:50:53 --> Undefined property: App\Controllers\Student::$load
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(802): App\Controllers\Student->__construct()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(403): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-28 19:51:34 --> Undefined property: App\Controllers\Student::$load
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(802): App\Controllers\Student->__construct()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(403): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-28 19:51:46 --> Undefined property: App\Controllers\Student::$load
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(802): App\Controllers\Student->__construct()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(403): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-28 19:52:11 --> Undefined property: App\Controllers\Student::$load
+#0 C:\xampp\htdocs\code\app\Controllers\Student.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\code\system\CodeIgniter.php(802): App\Controllers\Student->__construct()
+#2 C:\xampp\htdocs\code\system\CodeIgniter.php(403): CodeIgniter\CodeIgniter->createController()
+#3 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-02-28 20:33:07 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:33:07 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `title`,...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `title`,...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `title`,...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `title`,...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(45): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:34:18 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:34:18 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(45): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:35:16 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:35:16 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(45): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:43:42 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:43:42 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:43:43 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:43:43 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:43:45 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:43:45 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:44:30 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:44:30 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:44:30 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:44:30 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:44:32 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:44:32 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:44:49 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:44:49 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:44:51 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:44:51 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(68): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:47:11 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:47:11 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:47:35 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:47:35 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:48:21 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:48:21 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(67): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:48:21 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:48:21 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(67): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-28 20:48:23 --> Not unique table/alias: 'tbl_students'
+CRITICAL - 2022-02-28 20:48:23 --> Not unique table/alias: 'tbl_students'
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `name`, ...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `name`, ...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `name`, ...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `name`, ...', Array, false)
+#4 C:\xampp\htdocs\code\app\Controllers\Student.php(67): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Student->ajaxLoadData()
+#6 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

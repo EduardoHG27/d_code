@@ -1,0 +1,38 @@
+ERROR - 2022-03-11 22:42:30 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:43:08 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:43:55 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:44:49 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:47:01 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:47:14 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:50:51 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:52:15 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:52:45 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:53:00 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:53:30 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:54:32 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:54:50 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:56:00 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 22:56:43 --> Table 'codeigniter.tbl_plans' doesn't exist
+CRITICAL - 2022-03-11 22:56:43 --> Table 'codeigniter.tbl_plans' doesn't exist
+#0 C:\xampp\htdocs\code\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\code\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\code\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\code\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\code\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\code\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\code\app\Controllers\Plans\Plans.php(171): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\code\system\CodeIgniter.php(825): App\Controllers\Plans\Plans->ajaxLoadData()
+#8 C:\xampp\htdocs\code\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plans\Plans))
+#9 C:\xampp\htdocs\code\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\code\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-03-11 22:58:58 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:00:26 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:01:28 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:04:16 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:04:44 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:05:10 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:06:53 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:09:16 --> Unknown table 'codeigniter.user'
+ERROR - 2022-03-11 23:09:17 --> Table 'tbl_students' already exists
+ERROR - 2022-03-11 23:09:34 --> Table 'tbl_students' already exists
