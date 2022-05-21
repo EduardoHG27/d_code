@@ -19,7 +19,7 @@ main#main {
   background: #59b6ec61;
   display: flex;
   align-items: center;
-  background: url(http://gym-system.ecommerce343.com/public/assets/uploads/shtanga-skamya-gym-fitness.jpg);
+  background: url(/assets/uploads/shtanga-skamya-gym-fitness.jpg);
 
 }
 
@@ -32,7 +32,7 @@ main#main {
   background: #59b6ec61;
   display: flex;
   align-items: center;
-  background: url(http://gym-system.ecommerce343.com//public/assets/uploads/home_in.jpg);
+  background: url(/code/public/assets/uploads/home_in.jpg);
 
 }
 
