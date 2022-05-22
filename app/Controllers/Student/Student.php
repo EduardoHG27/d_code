@@ -245,10 +245,9 @@ class Student extends BaseController
             if ($studetsModel->save($data)) {
                 $correo = $mail->load();
                 $correo->isSMTP();
-                $correo->SMTPDebug = 2;
                 $correo->Host = 'smtp.hostinger.com';
                 $correo->Port = 465;
-              $correo->SMTPOptions = array(
+                $correo->SMTPOptions = array(
                     'ssl' => array(
                         'verify_peer' => false,
                         'verify_peer_name' => false,
@@ -270,16 +269,27 @@ class Student extends BaseController
                  <p>Tu contraseña para Ingresar es : </p>".$this->request->getPost('password');
         
                 $correo->Body = $mailcontent;
-                if (!$correo->send()) {
-                    var_dump($correo->ErrorInfo);
+                
+                if($correo->send())
+                {
+                    $consulta['id'] = $studetsModel->insertID();
+                    $data = [
+                        'matricula' =>  $year . $consulta['id']
+                    ];
+                    $studetsModel->update($consulta['id'], $data);
+                    $consulta['resp'] = '1';
+    
+                   
+                    echo json_encode($consulta);
                 }
-                $consulta['id'] = $studetsModel->insertID();
-                $data = [
-                    'matricula' =>  $year . $consulta['id']
-                ];
-                $studetsModel->update($consulta['id'], $data);
-                $consulta['resp'] = '1';
-                echo json_encode($consulta);
+                else
+                {
+                    $consulta['resp'] = '2';
+    
+                   
+                    echo json_encode($consulta);
+                }
+              
             } else {
 
                 $consulta['resp'] = '0';

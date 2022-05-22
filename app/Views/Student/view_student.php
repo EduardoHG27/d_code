@@ -848,8 +848,12 @@
                 method: "post",
                 data: data,
                 success: function(resp) {
+
+                 
                     var result = $.parseJSON(resp);
+                   
                     if (result.resp == 1) {
+                        $('#exampleModal').modal('toggle');
                         table.ajax.reload();
                         Swal.fire({
                             position: 'top-end',
@@ -858,10 +862,10 @@
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        $('#exampleModal').modal('toggle');
+                   
 
                     } else if (resp == 2) {
-                        $('#msg').html('<div class="alert alert-danger">ID No already existed.</div>')
+                        $('#msg').html('<div class="alert alert-danger">Error al enviar el correo.</div>')
                         end_load();
                     }
                 }
