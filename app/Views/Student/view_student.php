@@ -832,6 +832,7 @@
 
             return;
         } else {
+            
             document.getElementById("plan_button").disabled = false;
             if ($('#plan_select').select2('val') != null) {
                 data = $('#plan_select').select2('data')[0];
@@ -998,7 +999,7 @@
 
             return;
         } else {
-
+          
             document.getElementById("plan_button").disabled = false;
 
             var data = {
@@ -1007,6 +1008,7 @@
                 'mobile': $('#txt_mobile').val(),
                 'password': $('#txt_password').val()
             };
+            start_load();
             $.ajax({
                 url: site_url + '/student/student_store',
                 method: "post",
@@ -1014,6 +1016,7 @@
                 success: function(resp) {
                     var result = $.parseJSON(resp);
                     if (result.resp == 1) {
+                        end_load();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -1045,7 +1048,7 @@
                 }
             })
 
-
+        
         }
     });
 
