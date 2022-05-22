@@ -75,6 +75,7 @@ $routes->group('student', ['namespace' => 'App\Controllers\Student'], function (
     $routes->post("student_log", "Student::log");
     $routes->post("planmember_store", "Student::store_planmember");
     $routes->post("student_chek_delete", "Student::chek_delete");
+    $routes->post("test", "Student::test");
     
     
     

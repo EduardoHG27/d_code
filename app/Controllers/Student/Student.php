@@ -452,7 +452,14 @@ class Student extends BaseController
         echo json_encode($json_data);
     }
 
+    public function test()
+    {
+       $data=[100, 100, 100, 100, 100, 100, 40];
+       $consulta['datos']=$data;
+       $consulta['resp'] = '1';
 
+       echo json_encode($consulta);
+    }
 
 
     public function get_plan()
