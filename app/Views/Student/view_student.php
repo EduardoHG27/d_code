@@ -1043,6 +1043,7 @@
                         end_load();
                     } else {
                         $('#msg').html('<div class="alert alert-danger">Nombre y/o correo ya registrado</div>')
+                        end_load();
                     }
 
                 }
