@@ -245,20 +245,23 @@ class Student extends BaseController
             if ($studetsModel->save($data)) {
                 $correo = $mail->load();
                 $correo->isSMTP();
-                $correo->Host = 'tls://smtp.gmail.com:587';
-                $correo->SMTPOptions = array(
+                $correo->SMTPDebug = 2;
+                $correo->Host = 'smtp.hostinger.com';
+                $correo->Port = 465;
+              $correo->SMTPOptions = array(
                     'ssl' => array(
                         'verify_peer' => false,
                         'verify_peer_name' => false,
                         'allow_self_signed' => true
                     )
                 );
+             
                 $correo->SMTPAuth = true;
-                $correo->Username  = 'desarrollo.hergut@gmail.com';
-                $correo->Password = 'hergut27';
+                $correo->Username  = 'gym_service@gym-system.ecommerce343.com';
+                $correo->Password = 'Hergut27!';
                 $correo->SMTPSecure = 'ssl';
-                $correo->Port = 587;
-                $correo->setFrom('desarrollo.hergut@gmail.com', 'CodexWorld');
+                
+                $correo->setFrom('gym_service@gym-system.ecommerce343.com', 'CodexWorld');
                 $correo->addReplyTo($this->request->getPost('email'), 'Codexworld');
                 $correo->addAddress($this->request->getPost('email'));
                 $correo->Subject = 'Registro de Usuario Exitoso';

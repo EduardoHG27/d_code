@@ -3,6 +3,7 @@
 namespace App\Controllers\Principal;
 
 use App\Controllers\BaseController;
+use App\Models\StudetsModel;
 
 class First_page extends BaseController
 {
@@ -10,6 +11,7 @@ class First_page extends BaseController
     {
         $session = session();
 
+      
         if ($session->get('usuario')) {
             return view('Principal/view_first');
         } else {
@@ -32,8 +34,34 @@ class First_page extends BaseController
     {
         $session = session();
 
+        $studetsModel = new StudetsModel();
+        $studetsModel->select();
+        $studetsModel->where('status', 'true');
+        $query = $studetsModel->get();
+        $miembros_activos = $query->getResult('array');
+        $miembros_activos=count($miembros_activos);
+        $studetsModel->select();
+        $studetsModel->where('status', 'false');
+        $query = $studetsModel->get();
+        $miembros_inactivos = $query->getResult('array');
+        $miembros_inactivos=count($miembros_inactivos);
+     
+   
+   
+      
+
+
+
+        $data = [
+            'miembros_activos' => $miembros_activos,
+            'miembros_inactivos' => $miembros_inactivos,
+            'ingresos_diario' => '3,500',
+            'ingresos_mensual' => '750'
+            
+        ];
+
         if ($session->get('usuario')) {
-            return view('Principal/view_dash');
+            return view('Principal/view_dash',$data);
         } else {
             return view('Auth/Home');
         }
