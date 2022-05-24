@@ -172,8 +172,11 @@
               </div>
             </div>
             <hr class="dark horizontal my-0">
-            <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than lask week</p>
+            <div  style="height: 58px;" class="card-footer p-3">
+               <span class="text-<?php echo 'danger'; ?> text-sm font-weight-bolder">+55% </span> <select style="margin: 0px 0px 0 0px;" id="standard-select">
+                  <option value="Option 1">que la semana pasada</option>
+                  <option value="Option 2">que el mes pasado</option>
+                </select>
             </div>
           </div>
         </div>
@@ -190,7 +193,11 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than lask month</p>
+             
+              <span class="text-<?php echo 'success'; ?> text-sm font-weight-bolder">+3% </span> <select style="margin: 0px 0px 0 0px;" id="standard-select">
+                  <option value="Option 1">que la semana pasada</option>
+                  <option value="Option 2">que el mes pasado</option>
+                </select>
             </div>
           </div>
         </div>
@@ -207,7 +214,10 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
+            <span class="text-<?php echo 'danger'; ?> text-sm font-weight-bolder">+2% </span> <select style="margin: 0px 0px 0 0px;" id="standard-select">
+                  <option value="Option 1">que la semana pasada</option>
+                  <option value="Option 2">que el mes pasado</option>
+                </select>
             </div>
           </div>
         </div>
@@ -224,7 +234,10 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than yesterday</p>
+            <span><label  class="text-<?php echo $label_mes ; ?> text-sm font-weight-bolder" for="html"><?php echo $porcentaje_mes; ?>%</label></span> <select style="margin: 0px 0px 0 0px;" id="standard-select">
+                  <option value="Option 1">que el mes pasado</option>
+                  <option value="Option 2">que la semana pasada</option>
+                </select>
             </div>
           </div>
         </div>
@@ -768,7 +781,6 @@
         },
         success: function(resp) {
           var result = $.parseJSON(resp);
-          console.log(result.datos);
           new Chart(ctx, {
             type: "bar",
             data: {
@@ -780,7 +792,7 @@
                 borderRadius: 4,
                 borderSkipped: false,
                 backgroundColor: "rgba(255, 255, 255, .8)",
-                data: result.datos,
+                data: result.datos_entrada,
                 maxBarThickness: 6
               }, ],
             },
@@ -853,9 +865,9 @@
           new Chart(ctx2, {
             type: "line",
             data: {
-              labels: ["Apr", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              labels: ["Ene", "Feb", "Mar", "Abr", "May"],
               datasets: [{
-                label: "Mobile apps",
+                label: "Ingrgesoss",
                 tension: 0,
                 borderWidth: 0,
                 pointRadius: 5,
@@ -866,7 +878,7 @@
                 borderWidth: 4,
                 backgroundColor: "transparent",
                 fill: true,
-                data: [250, 500, 40, 300, 320, 500, 350, 200, 230, 500],
+                data: result.datos_ingresos,
                 maxBarThickness: 6
 
               }],
@@ -1032,6 +1044,18 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="./assets/js/material-dashboard.min.js?v=3.0.2"></script>
 </body>
+<style>
+  select {
+ 
+    margin: 20px auto;
+    border: 1px solid #ffff;
+    height: 30px;
+    width: 230px;
+    overflow: hidden;
+    position: relative;
+
+  }
+</style>
 
 </html>
 <?= $this->endSection() ?>

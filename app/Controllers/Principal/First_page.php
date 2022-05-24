@@ -38,6 +38,10 @@ class First_page extends BaseController
         $session = session();
 
         $now = new DateTime();
+
+        $mes_p_today = date("Y-m-t", strtotime("-1 months"));
+        $mes_p_start = date("Y-m-01", strtotime("-1 months"));
+
         $now->setTimezone(new DateTimeZone('America/Mexico_City'));
         $todays = $now->format('Y-m-d');
         $date_in = $now->format('Y-m-01');
@@ -59,6 +63,20 @@ class First_page extends BaseController
         $query = $studetsModel->get();
         $miembros_inactivos = $query->getResult('array');
         $miembros_inactivos = count($miembros_inactivos);
+
+
+        $paysModel->select('cost,date_in');
+        $paysModel->where('date_in >=', $mes_p_start);
+        $paysModel->where('date_in <=', $mes_p_today);
+        $query = $paysModel->get();
+        $cost = $query->getResult('array');
+        $ingresos_mensual_p=0;
+        foreach ($cost as $key => $value) {
+            $ingresos_mensual_p=$value['cost']+$ingresos_mensual_p;
+        }
+
+         
+
         $paysModel->select('cost,date_in');
         $paysModel->where('date_in >=', $date_in);
         $paysModel->where('date_in <=', $date_last);
@@ -68,6 +86,17 @@ class First_page extends BaseController
         foreach ($cost as $key => $value) {
             $ingresos_mensual=$value['cost']+$ingresos_mensual;
         }
+        $porcentaje_mes=(($ingresos_mensual-$ingresos_mensual_p)/$ingresos_mensual_p)*100;
+        $porcentaje_mes=number_format($porcentaje_mes, 2);
+       
+        if($porcentaje_mes>0){
+            $label_mes='success';
+        }
+        else
+        {
+            $label_mes='danger';
+        }
+
      
         $ingresos_diario=0;
         $paysModel->select('cost,date_in');
@@ -82,8 +111,9 @@ class First_page extends BaseController
             'miembros_activos' => $miembros_activos,
             'miembros_inactivos' => $miembros_inactivos,
             'ingresos_diario' => $ingresos_diario,
-            'ingresos_mensual' => $ingresos_mensual
-
+            'ingresos_mensual' => $ingresos_mensual,
+            'porcentaje_mes'=> $porcentaje_mes,
+            'label_mes'=>$label_mes
         ];
 
         if ($session->get('usuario')) {

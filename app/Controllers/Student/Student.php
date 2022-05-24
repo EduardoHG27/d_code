@@ -454,8 +454,61 @@ class Student extends BaseController
 
     public function test()
     {
+        $paysModel = new PaysModel();
+
+        
+        $paysModel->select('cost,date_in');
+        $paysModel->orderBy('date_in', 'ASC');
+        $query = $paysModel->get();
+        $get_total = $query->getResult('array');
+
+        $i=0;
+        $j=0;
+        $arr=[];
+        $suma=0;
+        $data=count($get_total);
+       
+        foreach ($get_total as $key => $value) {
+           
+           
+            if($i==$data-1)
+            {
+                $arr[$j]=$suma+$value['cost'];
+                $suma=0;
+            }
+            else
+            {   
+                $fecha=$value['date_in'];
+                $pieces = explode("-", $fecha);
+                $pieces[1];
+                $fecha=$get_total[$i+1]['date_in'];
+                $pieces_1 = explode("-", $fecha);
+                $pieces_1[1];
+     
+                if($pieces[1]==$pieces_1[1])
+                {
+                 $suma=$value['cost']+$suma;
+                }else
+                {
+                 $arr[$j]=$suma+$value['cost'];
+                 $suma=0;
+                 $j++;
+                }
+                $i++;
+            }
+         
+        }
+
+        $arr_dat = array();
+        foreach ($arr as $key => $value) {
+            $arr_dat[] =$value;
+        }
+
+    
+        
        $data=[100, 100, 100, 100, 100, 100, 40];
-       $consulta['datos']=$data;
+       $consulta['datos_entrada']=$data;
+       $consulta['datos_ingresos']=$arr_dat;
        $consulta['resp'] = '1';
 
        echo json_encode($consulta);
