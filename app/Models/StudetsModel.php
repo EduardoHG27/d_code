@@ -12,7 +12,7 @@ class StudetsModel extends Model
     protected $useAutoIncrement = true;
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
-    protected $allowedFields = ['name','email','mobile','status','password','matricula'];
+    protected $allowedFields = ['name','email','mobile','status','password','matricula','qr_location','password_qr'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

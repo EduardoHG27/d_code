@@ -27,7 +27,9 @@
 	<link href="<?php echo base_url(); ?>/assets/css/login.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>/assets/bootstrapValidator/bootstrap.min.css" rel="stylesheet">
 
-
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
 </head>
 <style>
@@ -57,7 +59,13 @@
 
 					<form action="<?= base_url(route_to('logueo_test')) ?>" id="login-form" method="POST">
 						<div class="form-group">
-							<label for="username" class="control-label">Username</label>
+							<div class="preview-container">
+								<video width="300" height="220" id="preview"></video>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label for="username" class="control-label">Username Second</label>
 							<input type="text" id="username" name="username" class="form-control" value="<?= old('username') ?>">
 						</div>
 						<p class="is-danger help"><?= session('errors.username') ?></p>
@@ -66,11 +74,11 @@
 							<input type="password" id="password" name="password" class="form-control">
 							<p class="is-danger help"><?= session('errors.password') ?></p>
 						</div>
-						<center>	<button type="button" id="btnmiembro" class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
-					
-
+						<center> <button type="button" id="btnmiembro" class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
 					</form>
-					
+
+			
+
 				</div>
 			</div>
 		</div>
@@ -87,6 +95,7 @@
 <script src="<?php echo base_url(); ?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo base_url(); ?>/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>/select/js/app.js"></script>
 <script>
 	var site_url = "<?php echo base_url(); ?>";
 
@@ -125,9 +134,9 @@
 						'warning'
 					)
 
-				}else if (result.data == 5) {
-					
-					window.location.href=site_url+"/principal/inicio";
+				} else if (result.data == 5) {
+
+					window.location.href = site_url + "/principal/inicio";
 
 				} else {
 					Swal.fire(
@@ -137,7 +146,7 @@
 					)
 
 					$('#username').val('');
-					
+
 					$('#password').val('')
 				}
 

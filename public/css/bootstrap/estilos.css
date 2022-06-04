@@ -292,7 +292,8 @@ padding: 10;
     }
 
     .blue-button-min {
-        background-color: #6600ff;
+        /* background-color: #6600ff;*/
+        background-color: #e236a6;
         border: none;
         color: white;
         padding: 5px 12px;
@@ -303,3 +304,21 @@ padding: 10;
         margin: 4px 2px;
         cursor: pointer;
     }
+
+    .bluew-button-min {
+        background-color:#000fe6;
+        border: none;
+        color: white;
+        padding: 5px 7px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+ 
+
+    
+    

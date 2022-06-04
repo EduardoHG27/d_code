@@ -75,7 +75,9 @@ $routes->group('student', ['namespace' => 'App\Controllers\Student'], function (
     $routes->post("student_log", "Student::log");
     $routes->post("planmember_store", "Student::store_planmember");
     $routes->post("student_chek_delete", "Student::chek_delete");
-    $routes->post("test", "Student::test");
+    $routes->post("dash_panel", "Student::dash");
+    $routes->post("qr", "Student::qr");
+    $routes->post("get_qr", "Student::get_qr");
     
     
     
@@ -96,14 +98,16 @@ $routes->group('plans', ['namespace' => 'App\Controllers\Plans'], function ($rou
 });
 
 $routes->group('staff', ['namespace' => 'App\Controllers\Staff'], function ($routes) {
-    $routes->post("staff-ajax-load", "Staff::ajaxLoadData");
+    $routes->post("staff-ajax-load", "Staff::ajaxLoadDataStaff");
+    $routes->post("staff_store", "Staff::store");
+    $routes->post("staff_delete", "Staff::delete");
     $routes->post("plan_store", "Staff::store");
-    $routes->post("plan_get", "Staff::get_plan");
+    $routes->post("staff_update", "Staff::get_staff");
     $routes->post("plan_update", "Staff::update");
     $routes->post("plan_delete", "Staff::delete");
     $routes->post("plan_status_up", "Staff::status_up");
-    
-
+    $routes->post("schedule", "Staff::schedule");
+    $routes->post("chek_delete", "Staff::chek_delete");
 });
 
 $routes->group('informativo', ['namespace' => 'App\Controllers\Informativo'], function ($routes) {

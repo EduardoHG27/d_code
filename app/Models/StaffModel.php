@@ -12,8 +12,8 @@ class StaffModel extends Model
     protected $primaryKey = 'id_staff';
     protected $useAutoIncrement = true;
     protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
-    protected $allowedFields = ['matricula_staff', 'name','email','mobile','status','position','password'];
+    protected $useSoftDeletes = false;
+    protected $allowedFields = ['name','email','mobile','status','position','password','matricula_staff'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

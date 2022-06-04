@@ -16,6 +16,7 @@
 defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
 define('RUTA_APP',dirname(dirname(__FILE__)));
 define('RUTA_VENDOR',dirname(dirname(dirname(__FILE__))));
+
 /*
  | --------------------------------------------------------------------------
  | Composer Path

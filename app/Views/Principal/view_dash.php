@@ -774,7 +774,7 @@
       var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
 
       $.ajax({
-        url: site_url + '/student/test',
+        url: site_url + '/student/dash_panel',
         method: "post",
         data: {
           id: '12'
@@ -865,15 +865,14 @@
           new Chart(ctx2, {
             type: "line",
             data: {
-              labels: ["Ene", "Feb", "Mar", "Abr", "May"],
+              labels: result.mes,
               datasets: [{
-                label: "Ingrgesoss",
+                label: "Ingresos",
                 tension: 0,
                 borderWidth: 0,
                 pointRadius: 5,
                 pointBackgroundColor: "rgba(255, 255, 255, .8)",
                 pointBorderColor: "transparent",
-                borderColor: "rgba(255, 255, 255, .8)",
                 borderColor: "rgba(255, 255, 255, .8)",
                 borderWidth: 4,
                 backgroundColor: "transparent",

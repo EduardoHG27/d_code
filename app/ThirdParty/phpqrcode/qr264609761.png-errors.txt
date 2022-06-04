@@ -1,0 +1,1 @@
+2022-05-31 23:21:55: imagepng(C:\xampp\htdocs\gym_codepublic/qr264609761.png): failed to open stream: No such file or directory

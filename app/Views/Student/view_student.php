@@ -129,59 +129,7 @@
                 <h4 class="modal-title" id="myModalTitle"></h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
             <br>
-
-
-            <!--
-                
-    <div class="container">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#login-contents" id="login-tab" data-bs-toggle="tab">Log In</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#register-contents" id="register-tab" data-bs-toggle="tab">Register</a>
-    </li>
-  </ul>
-  <div class="tab-content">
-    <div id="login-contents" class="tab-pane active">
-      <table>
-        <tr>
-          <td>Username :</td>
-          <td><input type="text" id="ip-username" placeholder="Username"></td>
-        </tr>
-        <tr>
-          <td>Password :</td>
-          <td><input type="text" placeholder="Password" id="ip-password"></td>
-        </tr>
-      </table>
-    </div>
-    <div id="register-contents" class="tab-pane fade">
-      <table>
-        <tr>
-          <td>Name :</td>
-          <td><input type="text" placeholder="First Name" id="ip-f-name"></td>
-        </tr>
-        <tr>
-          <td>Last Name :</td>
-          <td><input type="text" placeholder="Last Name" id="ip-l-name"></td>
-        </tr>
-        <tr>
-          <td>E-Mail :</td>
-          <td><input type="text" placeholder="Your E-Mail Id" id="ip-e-mail"></td>
-        </tr>
-        <tr>
-          <td>A OTP will be sent to your mail id for verification.</td>
-          <td>
-            <Button class="btn btn-success" id="register-btn">Register</Button>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>  
--->
             <div class="container">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation" id="miembro_pestaña">
@@ -361,6 +309,35 @@
 
 </div>
 
+
+<div class="modal fade" id="Modalqr" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalTitle">Codigo Qr</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-2">
+                        <img id="image_qr" name="image_qr" width="300" height="300">
+                    </div>
+                    <div class="col-md-8">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
 <style>
     #plan_select {
         color: red;
@@ -488,11 +465,6 @@
         });
 
 
-
-
-
-
-
         // DataTable
         table = $('#tbl-students-data').DataTable({
             paging: true,
@@ -571,6 +543,7 @@
                         return '<div >' +
                             '<button class="red-button-min" onclick="eliminar(' + row.id + ')"><i class="fas fa-trash-alt"></i></button>' +
                             '<button class="yellow-button-min" onclick="actualizar(' + row.id + ')"><i class="fa fa-pencil-square-o"></i></button>' +
+                            '<button class="bluew-button-min" onclick="get_qr(' + row.id + ')"><i class="fa fa-qrcode"></i></button>' +
                             '</div>';
                     }
                 },
@@ -832,7 +805,7 @@
 
             return;
         } else {
-            
+
             document.getElementById("plan_button").disabled = false;
             if ($('#plan_select').select2('val') != null) {
                 data = $('#plan_select').select2('data')[0];
@@ -850,9 +823,9 @@
                 data: data,
                 success: function(resp) {
 
-                 
+
                     var result = $.parseJSON(resp);
-                   
+
                     if (result.resp == 1) {
                         $('#exampleModal').modal('toggle');
                         table.ajax.reload();
@@ -863,7 +836,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         })
-                   
+
 
                     } else if (resp == 2) {
                         $('#msg').html('<div class="alert alert-danger">Error al enviar el correo.</div>')
@@ -886,6 +859,7 @@
             document.getElementById("plan_button").disabled = false;
 
             var data = {
+                'id': $('#txt_id').val(),
                 'name': $('#txt_name').val(),
                 'email': $('#txt_email').val(),
                 'mobile': $('#txt_mobile').val()
@@ -897,6 +871,7 @@
                 data: data,
                 success: function(resp) {
                     var result = $.parseJSON(resp);
+                    console.log(result);
                     if (result.resp == 1) {
                         Swal.fire({
                             position: 'top-end',
@@ -919,8 +894,9 @@
                         //	setTimeout(function() {
                         //		location.reload()
                         //	}, 1000)
-                    } else if (resp == 2) {
-                        $('#msg').html('<div class="alert alert-danger">Error al generar el miembro.</div>')
+                    } else if (result.resp == 2) {
+                        data = result.msj_error;
+                        $('#msg').html('<div class="alert alert-danger">Error al enviar correo:' + data + '</div>')
                         end_load();
                     } else {
                         $('#msg').html('<div class="alert alert-danger">Nombre y/o correo ya registrado</div>')
@@ -999,7 +975,7 @@
 
             return;
         } else {
-          
+
             document.getElementById("plan_button").disabled = false;
 
             var data = {
@@ -1038,8 +1014,9 @@
                         //	setTimeout(function() {
                         //		location.reload()
                         //	}, 1000)
-                    } else if (resp == 2) {
-                        $('#msg').html('<div class="alert alert-danger">Error al generar el miembro.</div>')
+                    } else if (result.resp == 2) {
+                        data = result.msj_error;
+                        $('#msg').html('<div class="alert alert-danger">Error al enviar correo:' + data + '</div>')
                         end_load();
                     } else {
                         $('#msg').html('<div class="alert alert-danger">Nombre y/o correo ya registrado</div>')
@@ -1049,7 +1026,7 @@
                 }
             })
 
-        
+
         }
     });
 
@@ -1140,7 +1117,7 @@
             },
             success: function(resp) {
 
-                console.log(resp);
+            
                 var result = $.parseJSON(resp);
                 if (result.resp == 1) {
                     Swal.fire({
@@ -1203,9 +1180,41 @@
             }
         });
 
+    }
 
-        /*
-         */
+    function get_qr(id) {
+        console.log(id);
+
+        $.ajax({
+            url: site_url + '/student/get_qr',
+            method: "post",
+            data: {
+                id: id
+            },
+            success: function(resp) {
+             var result = $.parseJSON(resp);
+
+                if(result.resp=='1')
+                {
+                    $('#Modalqr').modal('show');
+                    document.getElementById("image_qr").src = "../"+result.data;
+                }
+                else
+                {
+                    Swal.fire({
+                            position: 'top-end',
+                            icon: 'warning',
+                            title: 'Usuario no cuenta con código Qr',
+                            showConfirmButton: false,
+                            timer: 2500
+                        })
+                }
+            }
+        });
+    
+
+
+       
     }
 
     function actualizar(id) {

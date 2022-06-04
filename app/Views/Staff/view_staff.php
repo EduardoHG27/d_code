@@ -1,15 +1,11 @@
 <?= $this->extend('Front/layout/main') ?>
 <?= $this->section('content') ?>
 
-
-
-
-
+<?php $session = session(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/select/css/select2.min.css">
 
 
 <script type="text/javascript" src="<?php echo base_url(); ?>/select/js/select2.js"></script>
-
 <div class="row mt-3 ml-3 mr-3">
 
 
@@ -46,29 +42,28 @@
                                     <div class="icono">
                                         <i class="far fa-trash-alt"></i>
                                     </div>
-                                    <a class="small-box-footere">Eliminar Staff<i class="fa fa-arrow-circle-right"></i></a>
+                                    <a class="small-box-footere">Eliminar Staff <i class="fa fa-arrow-circle-right"></i></a>
                                 </button>
                                 <!--
-<button id="btnActForm" class="ejemplo1 bg-green-active dis button1">
-    <div class="icono">
-        <i class="fas fa-check"></i>
-    </div>
-    <a class="small-box-footere">Activar Forma Adquisición<i class="fa fa-arrow-circle-right"></i></a>
-</button>
+                    <button id="btnActForm" class="ejemplo1 bg-green-active dis button1">
+                        <div class="icono">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <a class="small-box-footere">Activar Forma Adquisición<i class="fa fa-arrow-circle-right"></i></a>
+                    </button>
+                    <button id="btnDesForm" class="ejemplo1 bg-red-active dis button2">
+                        <div class="icono">
+                            <i class="fas fa-window-close"></i>
+                        </div>
+                        <a class="small-box-footere">Desactivar Forma Adquisición<i class="fa fa-arrow-circle-right"></i></a>
+                    </button>
 
-<button id="btnDesForm" class="ejemplo1 bg-red-active dis button2">
-    <div class="icono">
-        <i class="fas fa-window-close"></i>
-    </div>
-    <a class="small-box-footere">Desactivar Forma Adquisición<i class="fa fa-arrow-circle-right"></i></a>
-</button>
-
-<button id="btnImprimir" class="ejemplo1 btn-info" onclick="delete_btn()">
-    <div class="icono">
-        <i class="fa fa-print"></i>
-    </div>
-    <a class="small-box-footere">Imprimir Reporte <i class="fa fa-arrow-circle-right"></i></a>
-</button>
+                    <button id="btnImprimir" class="ejemplo1 btn-info" onclick="delete_btn()">
+                        <div class="icono">
+                            <i class="fa fa-print"></i>
+                        </div>
+                        <a class="small-box-footere">Imprimir Reporte <i class="fa fa-arrow-circle-right"></i></a>
+                    </button>
 
 -->
                             </div>
@@ -91,6 +86,7 @@
             <div class="card-body">
                 <hr>
                 <div class="card-body">
+
                     <table class="table table-sm table-striped  table-bordered table-hover " id="tbl-students-data">
                         <thead>
                             <tr>
@@ -98,19 +94,25 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Mobile</th>
+                                <th>Position</th>
                                 <th>Status</th>
                                 <th>Action</th>
 
                             </tr>
                         </thead>
                     </table>
-
                 </div>
             </div>
         </div>
     </div>
+   
 </div>
 
+</div>
+<div class="card">
+
+   
+</div>
 
 
 
@@ -119,6 +121,7 @@
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
+
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalTitle"></h4>
@@ -204,31 +207,35 @@
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col-md-4">
+                                    <div id="div_1" class="col-md-4">
                                         <label class="control-label">Name</label>
                                         <input type="text" class="form-control" name="txt_name" id="txt_name" placeholder="Nombre" />
                                     </div>
-                                    <div class="col-md-4">
+                                    <div id="div_2" class="col-md-4">
                                         <label class="control-label">Email</label>
                                         <input type="text" class="form-control" name="txt_email" id="txt_email" placeholder="Email" />
                                     </div>
-                                    <div class="col-md-4">
-                                        <label class="control-label">Mobile</label>
-                                        <input type="text" class="form-control" name="txt_mobile" id="txt_mobile" placeholder="Telefono" />
+                                    <div id="div_3" class="col-md-4">
+                                        <label id="label_3" class="control-label">Mobile</label>
+                                        <input type="number" class="form-control" name="txt_mobile" id="txt_mobile" placeholder="Telefono" min="1" />
                                     </div>
 
-                                    <div class="col-md-4">
-                                        <label class="control-label">Contraseña</label>
+                                    <div id="div_5" class="col-md-4">
+                                        <label id="label_4" class="control-label">Cargo</label>
+                                        <input type="text" class="form-control" name="txt_cargo" id="txt_cargo" placeholder="Cargo" />
+                                    </div>
+
+                                    <div id="div_4" class="col-md-4">
+                                        <label id="label_4" class="control-label">Contraseña</label>
                                         <input type="password" class="form-control" name="txt_password" id="txt_password" placeholder="Contraseña" />
                                     </div>
-
                                 </div>
                                 <div class="row form-group">
                                 </div>
                             </form>
                             <div class="modal-footer">
-                           
-                            <button type="button" id="btnstaff" class="btn btn-info">Crear staff</button>
+                                <button type="button" id="btnstaff" class="btn btn-info">Crear Staff</button>
+                                <button type="button" id="btnmodstaff" class="btn btn-info">Modificar Staff</button>
                             </div>
                         </div>
 
@@ -237,42 +244,82 @@
                     <div class="tab-pane fade" id="plan_form" role="tabpanel" aria-labelledby="plan_button">
                         <div class="container">
                             <br>
-                            <h3>Elegir plan</h3>
+                            <h3>Elegir Horario</h3>
                             <br>
                             <form action="" id="member-plan">
                                 <div id="msg"></div>
                                 <input type="hidden" name="id" value="<?php echo isset($_GET['id']) ? $_GET['id'] : '' ?>" class="form-control">
                                 <div class="row form-group">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Descuento</label>
-                                            <input type="text" id="txt_desc" name="txt_desc" class="form-control" value="" readonly>
-                                            </select>
-                                        </div>
+                                    <div class="col-md-2">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Valor Mes</label>
-                                            <input type="text" id="txt_valor" name="txt_valor" class="form-control" value="300" readonly>
-                                            </select>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
+                                            <label class="form-check-label" for="check1">Lunes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                                            <label class="form-check-label" for="check1">Martes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="check3" name="option3" value="something">
+                                            <label class="form-check-label" for="check1">Miercoles</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                                            <label class="form-check-label" for="check1">Jueves</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                                            <label class="form-check-label" for="check1">Viernes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="check6" name="option6" value="something">
+                                            <label class="form-check-label" for="check1">Sabado</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="check7" name="option7" value="something">
+                                            <label class="form-check-label" for="check1">Domingo</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Seleccionar Mes</label>
-                                            <select class="js-select2" id="plan_select" style="width: 100%;">
-                                            </select>
-                                        </div>
+                                    <div class="col-md-6">
+
+                                    <div class="container">
+        <div class='col-md-4'>
+         
+        </div>
+        <div class='col-md-4'>
+          <input type="text" id="slider3" class="slider" />
+        </div>
+        <div class='col-md-4'>
+          
+        </div>
+        
+    </div>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-md-2">
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                    </div>
+                                    <div class="col-md-2">
+
                                     </div>
                                 </div>
+
                                 <div class="row form-group">
-                                    <div class="col-md-4">
-                                        <label class="control-label">Total</label>
-                                        <input type="text" id="txt_total" name="txt_total" class="form-control" value="">
-                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="bthorario" class="btn btn-info">Asignar Horario</button>
                                 </div>
                             </form>
-                            <button type="button" id="btnplan" class="btn btn-info">Asignar Plan</button>
+
                         </div>
                     </div>
                     <div class="tab-pane fade" id="view_form" role="tabpanel" aria-labelledby="plan_button">
@@ -310,10 +357,31 @@
                                 <div class="row form-group">
                                     <div class="col-md-4">
                                         <label class="control-label">Proximo pago</label>
-                                        <input type="text" id="txt_date_next" name="txt_date_next" class="form-control" value="">
+                                        <input type="text" id="txt_date_next" name="txt_date_next" class="form-control" value="" readonly>
+                                        <input type="text" id="txt_payid" name="txt_payid" class="form-control" value="" readonly>
                                     </div>
                                 </div>
                             </form>
+
+                            <div class="row form-group">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-2">
+
+                                </div>
+                                <div class="col-md-2">
+
+                                </div>
+                                <div class="col-md-2">
+
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <button type="button" id="btn_eliminarplan" class="btn btn-info">Eliminar Plan</button>
+                                </div>
+
+                            </div>
 
                         </div>
                     </div>
@@ -323,13 +391,117 @@
 
             </div>
 
+            <div class="modal-footer">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+         <div class="container">
+        <div class='col-md-4'>
          
         </div>
+        <div class='col-md-4'>
+          <input type="text" id="slider3" class="slider" />
+        </div>
+        <div class='col-md-4'>
+          
+        </div>
+        
     </div>
-</div>
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>/select/css/rSlider.min.css">
+
+
+
+<script src="<?php echo base_url(); ?>/select/js/rSlider.min.js"></script>
+
+<script>
+    (function() {
+        'use strict';
+
+        var init = function() {
+
+            var slider2 = new rSlider({
+                target: '#slider2',
+                values: [0, 1, 2, 3, 4, 5, 6, '7', 8],
+                range: false,
+                set: [5],
+                tooltip: false,
+                onChange: function(vals) {
+                    console.log(vals);
+                }
+            });
+
+            var slider3 = new rSlider({
+                target: '#slider3',
+                values: {
+                    min: 7,
+                    max: 24
+                },
+                step: 1,
+                range: true,
+                set: [10],
+                scale: false,
+                labels: false,
+                onChange: function(vals) {
+
+                }
+            });
+            var slider4 = new rSlider({
+                target: '#slider4',
+                values: {
+                    min: 7,
+                    max: 24
+                },
+                step: 1,
+                range: true,
+                set: [10, 40],
+                scale: false,
+                labels: false,
+
+            });
+
+            var slider = new rSlider({
+                target: '#slider',
+                values: [2014, 2015, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, ],
+                range: true,
+                set: [2010, 2013],
+                onChange: function(vals) {
+                    console.log(vals);
+                }
+            });
+        };
+        window.onload = init;
+    })();
+</script>
+
+
+
+
+
+
+<style>
+    #plan_select {
+        color: red;
+        background-color: #acf;
+    }
+
+    #registration .error {
+        color: red;
+    }
+
+    #member-plan .error {
+        color: red;
+    }
+</style>
 <script>
     var site_url = "<?php echo base_url(); ?>";
 
+    document.getElementById('txt_payid').style.display = 'none';
 
     $(document).ready(function() {
 
@@ -409,7 +581,7 @@
 */
 
         $('#tbl-students-data thead tr').clone(true).appendTo('#tbl-students-data thead');
-        $('#tbl-students-data thead tr:eq(1) th:nth-child(n+1):nth-child(-n+4)').each(function(i) {
+        $('#tbl-students-data thead tr:eq(1) th:nth-child(n+1):nth-child(-n+5)').each(function(i) {
             var title = $(this).text();
             $(this).html('<input id="txt_' + i + '" type="text" class="form-control form-control-sm" placeholder="' + title + '" />');
             $('input', this).on('keyup change', function() {
@@ -422,19 +594,19 @@
             });
         });
 
-        $('#tbl-students-data thead tr:eq(1) th:nth-child(n+5)').each(function(i) {
+        $('#tbl-students-data thead tr:eq(1) th:nth-child(n+6)').each(function(i) {
             $(this).html('<select id="status" name="status" class="form-control input-sm" style="width:100%">' +
                 '<option value="0">Selecciona</option><option value="1">Activo</option><option value="2">No activo</option></select>');
             $('select', this).on('change', function() {
-                if (table.column(4).search() !== this.value) {
+                if (table.column(5).search() !== this.value) {
                     table
-                        .column(4)
+                        .column(5)
                         .search(this.value)
                         .draw();
                 }
             });
         });
-        $('#tbl-students-data thead tr:eq(1) th:nth-child(n+6)').each(function(i) {
+        $('#tbl-students-data thead tr:eq(1) th:nth-child(n+7)').each(function(i) {
             $(this).html('<button type="button" class="blue-button-min" onclick="limpiar()">Limpiar<i class="fa fa-eraser" aria-hidden="true"></i></button>');
         });
 
@@ -467,7 +639,7 @@
                 [1, "desc"]
             ],
             columns: [{
-                    data: "matricula_staff",
+                    data: "id_staff",
                     'orderable': true,
                 },
                 {
@@ -480,6 +652,8 @@
                 },
                 {
                     data: "mobile"
+                }, {
+                    data: "position"
                 },
                 {
 
@@ -544,25 +718,11 @@
                 end_load();
             } else {
 
-                eliminar(data['id']);
+                eliminar(data['id_staff']);
             }
         });
 
-        function enable_tabs() {
 
-
-            document.getElementById("plan_pestaña").classList.add('disabledTab');
-            document.getElementById("staff").classList.remove('disabledTab');
-            document.getElementById("plan_pestaña").classList.add('enableTab');
-            document.getElementById("plan_pestaña").classList.add('active');
-            //document.getElementById("member_form").classList.remove('active');
-            // document.getElementById("plan_form").classList.add('active');
-            // document.getElementById("plan_form").classList.add('show');
-
-            $('#plan_button').attr("style", " ");
-
-
-        }
 
         function disable_tabs() {
             document.getElementById("plan_pestaña").classList.remove('enableTab');
@@ -573,10 +733,18 @@
 
         }
 
+        var div_1 = document.getElementById("div_1");
+        var div_2 = document.getElementById("div_2");
+        var div_3 = document.getElementById("div_3");
+        var div_4 = document.getElementById("div_4");
+        var div_5 = document.getElementById("div_5");
         $("#btn_agregarstaff").click(function() {
+            document.getElementById('view_form').style.display = 'none';
+            $("#registration").data('validator').resetForm();
+            $("#member-plan").data('validator').resetForm();
+            remove_red();
 
-
-
+            //validator.resetForm();
             $('.modal-title').text('Agregar | Staff');
             $('#exampleModal').modal('show');
 
@@ -585,6 +753,7 @@
             $('#txt_email').val('');
             $('#txt_mobile').val('');
             $('#btnstaff').show();
+            $('#btnmodstaff').hide();
             $('#btnactializar_est').hide();
 
 
@@ -609,16 +778,20 @@
 
             $('#plan_button').attr("style", "opacity:0.4");
             $('#plan_pestaña').attr("class", "disabledTab");
-
+            $('#msg').html('')
 
         });
 
 
         $("#update_button").click(function() {
-            $('#registration').trigger("reset");
+
+            remove_red();
+            $("#member-plan").data('validator').resetForm();
+            $('#plan_select ').val('0');
+
+            $('#msg').html('')
+            //  $('#miembro_pestaña').attr("class", "enabledTab");
             let data = table.rows('.selected').data()[0];
-            $('.modal-title').text('Modificar | Estudiante');
-            enable_tabs();
             if (data === undefined) {
                 Swal.fire({
                     position: 'top-end',
@@ -628,7 +801,7 @@
                     timer: 1500
                 })
             } else {
-                actualizar(data['id']);
+                actualizar(data['id_staff']);
             }
         });
 
@@ -641,7 +814,7 @@
             } else {
                 table.$('tr.selected').removeClass('selected');
                 data = table.row(this).data();
-                document.getElementById('lbltipAddedComment').innerHTML = data.id;
+                document.getElementById('lbltipAddedComment').innerHTML = data.id_staff;
                 $(this).addClass('selected')
                 $('#update_button').prop('disabled', false)
             }
@@ -655,7 +828,30 @@
 
 
     jQuery.validator.addMethod("alphanumeric", function(value, element) {
+        error
         return this.optional(element) || /^[a-zA-Z0-9]+$/.test(value);
+    });
+
+
+    jQuery(function($) {
+        var validator = $('#news_action').validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {},
+            highlight: function(element) {
+                $(element).parent().addClass('error')
+            },
+            unhighlight: function(element) {
+                $(element).parent().removeClass('error')
+            }
+        });
     });
 
     var $registrationForm = $('#registration');
@@ -671,11 +867,17 @@
                 },
                 txt_mobile: {
                     required: true
+                },
+                txt_password: {
+                    required: true
+                },
+                txt_cargo: {
+                    required: true
                 }
             },
             messages: {
                 txt_name: {
-                    required: 'Please enter username!'
+                    required: 'Please enter username!',
                 },
                 txt_email: {
                     required: 'Please enter email!',
@@ -683,22 +885,23 @@
                 },
                 txt_mobile: {
                     required: 'Please enter mobile!'
+                },
+                txt_password: {
+                    required: 'Please enter the password!'
+                },
+                txt_cargo: {
+                    required: 'Please enter the charge!'
                 }
             },
-            errorPlacement: function(error, element) {
-                if (element.is(":radio")) {
-                    error.appendTo(element.parents('.gender'));
-                } else if (element.is(":checkbox")) {
-                    error.appendTo(element.parents('.hobbies'));
-                } else {
-                    error.insertAfter(element);
-                }
-
+            highlight: function(element) {
+                $(element).parent().addClass('error')
+            },
+            unhighlight: function(element) {
+                $(element).parent().removeClass('error')
             }
 
         });
     }
-
 
     var $planForm = $('#member-plan');
     if ($planForm.length) {
@@ -712,9 +915,34 @@
                 txt_total: {
                     required: 'Please enter username!'
                 }
+            },
+            highlight: function(element) {
+                $(element).parent().addClass('error')
+            },
+            unhighlight: function(element) {
+                $(element).parent().removeClass('error')
             }
+
         });
     }
+
+    /*
+        var $planForm = $('#member-plan');
+        if ($planForm.length) {
+            $planForm.validate({
+                rules: {
+                    txt_total: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    txt_total: {
+                        required: 'Please enter username!'
+                    }
+                }
+            });
+        }
+    */
 
     $("#btn-refresh").click(function() {
         start_load();
@@ -725,49 +953,169 @@
 
 
 
-    $("#btnplan").click(function() {
-        if ($("#member-plan").valid() == false) {
+    $("#bthorario").click(function() {
+
+        console.log("data");
+        document.getElementById("plan_button").disabled = false;
+        if ($('#plan_select').select2('val') != null) {
+            data = $('#plan_select').select2('data')[0];
+        }
+        var data = {
+            'discount': $('#txt_desc').val(),
+            'month': data['text'],
+            'cost': $('#txt_total').val(),
+            'id': $('#txt_id').val(),
+
+        };
+        $.ajax({
+            url: site_url + '/staff/schedule',
+            method: "post",
+            data: data,
+            success: function(resp) {
+
+
+                var result = $.parseJSON(resp);
+
+                if (result.resp == 1) {
+                    $('#exampleModal').modal('toggle');
+                    table.ajax.reload();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Plan asignado correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
+
+                } else if (resp == 2) {
+                    $('#msg').html('<div class="alert alert-danger">Error al enviar el correo.</div>')
+                    end_load();
+                }
+            }
+        })
+    });
+
+    $("#btnmodstaff").click(function() {
+        //   $('#txt_valor').val('300');
+        if ($("#registration").valid() == false) {
 
             return;
         } else {
-            document.getElementById("plan_button").disabled = false;
-            if ($('#plan_select').select2('val') != null) {
-                data = $('#plan_select').select2('data')[0];
-            }
-            var data = {
-                'discount': $('#txt_desc').val(),
-                'month': data['text'],
-                'cost': $('#txt_total').val(),
-                'id': $('#txt_id').val(),
 
+            document.getElementById("plan_button").disabled = false;
+
+            var data = {
+                'id': $('#txt_id').val(),
+                'name': $('#txt_name').val(),
+                'email': $('#txt_email').val(),
+                'mobile': $('#txt_mobile').val()
+                // 'password': $('#txt_password').val()
             };
             $.ajax({
-                url: site_url + '/student/planmember_store',
+                url: site_url + '/student/student_update',
                 method: "post",
                 data: data,
                 success: function(resp) {
                     var result = $.parseJSON(resp);
+                    console.log(result);
                     if (result.resp == 1) {
-                        table.ajax.reload();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Plan asignado correctamente',
+                            title: 'Staff registrado correctamente',
                             showConfirmButton: false,
                             timer: 1500
                         })
 
+                        $('#txt_id').val(result.id);
+                        $('#plan_button').attr("style", "");
+                        $('#plan_pestaña').attr("class", "enabledTab");
+                        $('#plan_pestaña').attr("class", "active");
+                        $('#plan_pestaña').attr("class", "show");
 
-                    } else if (resp == 2) {
-                        $('#msg').html('<div class="alert alert-danger">ID No already existed.</div>')
+                        $('#txt_password').val('');
+
+                        table.ajax.reload();
+                        $('#msg').html('')
+                        //	setTimeout(function() {
+                        //		location.reload()
+                        //	}, 1000)
+                    } else if (result.resp == 2) {
+                        data = result.msj_error;
+                        $('#msg').html('<div class="alert alert-danger">Error al enviar correo:' + data + '</div>')
                         end_load();
+                    } else {
+                        $('#msg').html('<div class="alert alert-danger">Nombre y/o correo ya registrado</div>')
                     }
+
                 }
             })
 
 
         }
     });
+
+
+    $("#btn_eliminarplan").click(function() {
+
+        document.getElementById("plan_button").disabled = false;
+
+        var data = {
+            'payid': $('#txt_payid').val(),
+            'id': $('#txt_id').val()
+        };
+        Swal.fire({
+            title: 'Esta seguro de eliminar el plan de : ' + $('#txt_name').val() + '  ?',
+            text: "Una vez eliminado el registro no se podra recuperar!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si Eliminar!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                start_load();
+                $.ajax({
+                    url: site_url + '/staff/staff_delete',
+                    method: "post",
+                    data: data,
+                    success: function(resp) {
+                        var result = $.parseJSON(resp);
+                        if (result.resp == 1) {
+
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Plan eliminado correctamente',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            $('#exampleModal').modal('toggle');
+                            table.ajax.reload();
+
+
+                        } else if (resp == 0) {
+                            $('#msg').html('<div class="alert alert-danger">Error al eliminar el plan.</div>')
+
+                        } else {
+                            $('#msg').html('<div class="alert alert-danger">Error :Favor de contactar al administrador</div>')
+
+                        }
+
+                    }
+
+                });
+
+
+                end_load();
+            }
+        })
+
+    });
+
 
     $("#btnstaff").click(function() {
         if ($("#registration").valid() == false) {
@@ -781,19 +1129,22 @@
                 'name': $('#txt_name').val(),
                 'email': $('#txt_email').val(),
                 'mobile': $('#txt_mobile').val(),
-                'password': $('#txt_password').val()
+                'password': $('#txt_password').val(),
+                'charge': $('#txt_cargo').val()
             };
+            start_load();
             $.ajax({
-                url: site_url + '/student/student_store',
+                url: site_url + '/staff/staff_store',
                 method: "post",
                 data: data,
                 success: function(resp) {
                     var result = $.parseJSON(resp);
                     if (result.resp == 1) {
+                        end_load();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Estudiante registrado correctamente',
+                            title: 'Staff registrado correctamente',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -804,14 +1155,22 @@
                         $('#plan_pestaña').attr("class", "active");
                         $('#plan_pestaña').attr("class", "show");
 
+                        $('#txt_password').val('');
+
                         table.ajax.reload();
+                        $('#msg').html('')
                         //	setTimeout(function() {
                         //		location.reload()
                         //	}, 1000)
-                    } else if (resp == 2) {
-                        $('#msg').html('<div class="alert alert-danger">ID No already existed.</div>')
+                    } else if (result.resp == 2) {
+                        data = result.msj_error;
+                        $('#msg').html('<div class="alert alert-danger">Error al enviar correo:' + data + '</div>')
+                        end_load();
+                    } else {
+                        $('#msg').html('<div class="alert alert-danger">Nombre y/o correo ya registrado</div>')
                         end_load();
                     }
+
                 }
             })
 
@@ -835,7 +1194,7 @@
                 'mobile': $('#txt_mobile').val()
             };
             $.ajax({
-                url: site_url + '/student/student_update',
+                url: site_url + '/staff/staff_delete',
                 method: "post",
                 data: data,
                 success: function(resp) {
@@ -844,7 +1203,7 @@
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Estudiante actualizado correctamente',
+                            title: 'Staff actualizado correctamente',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -883,6 +1242,7 @@
         $('#txt_1').val('');
         $('#txt_2').val('');
         $('#txt_3').val('');
+        $('#txt_4').val('');
         document.getElementById("status").selectedIndex = 0;
         $('input[type=search]').val('').change();
 
@@ -891,35 +1251,26 @@
         table.columns(2).search('').draw();
         table.columns(3).search('').draw();
         table.columns(4).search('').draw();
-
-
     }
 
     function eliminar(id) {
 
-
-
         end_load();
-
-
-
-
-
         $.ajax({
-            url: site_url + '/student/student_chek_delete',
+            url: site_url + '/staff/chek_delete',
             method: "post",
             data: {
                 id: id
             },
             success: function(resp) {
 
-                console.log(resp);
+
                 var result = $.parseJSON(resp);
                 if (result.resp == 1) {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'error',
-                        title: 'staff con una cuenta activa no es posible eliminar el registro',
+                        title: 'Staff con una cuenta activa no es posible eliminar el registro',
                         showConfirmButton: false,
                         timer: 3500
                     })
@@ -940,7 +1291,7 @@
 
                             start_load();
                             $.ajax({
-                                url: site_url + '/student/student_delete',
+                                url: site_url + '/staff/staff_delete',
                                 method: "post",
                                 data: {
                                     id: id
@@ -982,37 +1333,66 @@
     }
 
     function actualizar(id) {
+        enable_tabs();
         end_load();
-        $('#exampleModal').modal('toggle');
+        today = new Date();
+        $('#txt_desc').val('');
+        //   $('#txt_valor').val('');
+        $('#txt_total').val('');
+
+        $('.modal-title').text('Modificar | Staff');
+        $("#registration").data('validator').resetForm();
+        div_1.classList.remove("error");
+        div_2.classList.remove("error");
+        div_3.classList.remove("error");
+        div_4.classList.remove("error");
+        div_5.classList.remove("error");
+        let data = table.rows('.selected').data()[0];
+        // $('#exampleModal').modal('toggle');
+
         $('#exampleModal').modal('show');
         $('#btnstaff').hide();
         $('#btnactializar').show();
+        $('#btnmodstaff').show();
 
         $.ajax({
-            url: site_url + '/student/student_get',
+            url: site_url + '/staff/staff_update',
             method: "post",
             data: {
                 id: id
             },
             success: function(resp) {
                 var result = $.parseJSON(resp);
-                console.log(result.data['id']);
                 if (result.resp == 1) {
 
-                    $('#txt_id').val(result.data['id']);
+                    console.log("data_2");
+                    document.getElementById("plan_button").classList.remove('active');
+                    document.getElementById("staff_pestaña").classList.remove('enabledTab');
+                    document.getElementById("plan_pestaña").classList.add('disabledTab');
+                    document.getElementById("plan_form").classList.remove('active');
+                    document.getElementById("view_form").classList.remove('active');
+
+                    document.getElementById("member_form").classList.add('show');
+                    document.getElementById("member_form").classList.add('active');
+                    document.getElementById("member_form").classList.add('enabledTab');
+                    document.getElementById("staff").classList.add('active');
+
+                    $('#txt_id').val(result.data['id_staff']);
                     $('#txt_name').val(result.data['name']);
                     $('#txt_email').val(result.data['email']);
                     $('#txt_mobile').val(result.data['mobile']);
+                    $('#txt_cargo').val(result.data['position']);
                     table.ajax.reload();
                     //	setTimeout(function() {
                     //		location.reload()
                     //	}, 1000)
 
                     if (result.pay != null) {
-                        console.log(result.pay);
-                        console.log("no vacio");
+
+                        //  document.getElementById("plan_pestaña").classList.add('disabledTab');
                         document.getElementById('plan_pestaña').style.display = 'none';
                         document.getElementById('view_pestaña').style.display = 'block';
+                        document.getElementById("view_button").classList.remove('active');
 
                         var today = new Date();
                         var dd = String(today.getDate()).padStart(2, '0');
@@ -1022,27 +1402,37 @@
 
 
                         var date1 = new Date(today);
-                        var date2 = new Date(result.pay['date_out']);
+                        var date2 = new Date(result.pay[0]['date_out']);
 
                         var Difference_In_Time = date2.getTime() - date1.getTime();
                         var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
                         date_new = addDays(date2, 2);
+                        []
 
-                        $('#txt_date_1').val(result.pay['date_in']);
-                        $('#txt_date_2').val(result.pay['date_out']);
+                        $('#txt_payid').val(result.pay[0]['id_pay']);
+                        $('#txt_date_1').val(result.pay[0]['date_in']);
+                        $('#txt_date_2').val(result.pay[0]['date_out']);
                         $('#txt_days').val(Difference_In_Days);
                         $('#txt_date_next').val(date_new);
+
+                        if (result.pay[0]['date_in'] === today) {
+                            $('#btn_eliminarplan').show();
+                        } else {
+                            document.getElementById('btn_eliminarplan').style.display = 'none';
+                        }
 
 
 
                     } else {
+                        console.log("data_1");
                         document.getElementById('view_pestaña').style.display = 'none';
                         document.getElementById('plan_pestaña').style.display = 'block';
-                        console.log("vacio");
+
                     }
 
                 } else if (resp == 2) {
+                    console.log("data_3");
                     $('#msg').html('<div class="alert alert-danger">ID No already existed.</div>')
                     end_load();
                 }
@@ -1088,8 +1478,6 @@
 
 
                 if (result.resp == 1) {
-                    console.log(result.data);
-                    $("#plan_select").append("<option value=''></option>");
                     $.each(result.data, function(key, value) {
 
                         $("#plan_select").append('<option value=' + value.id_plan + '>' + value.month + '</option>');
@@ -1105,6 +1493,31 @@
                 }
             }
         });
+    }
+
+    function enable_tabs() {
+
+
+        document.getElementById("plan_pestaña").classList.add('disabledTab');
+        document.getElementById("staff").classList.remove('disabledTab');
+        document.getElementById("plan_pestaña").classList.add('enableTab');
+        document.getElementById("plan_pestaña").classList.add('active');
+        //document.getElementById("member_form").classList.remove('active');
+        // document.getElementById("plan_form").classList.add('active');
+        // document.getElementById("plan_form").classList.add('show');
+
+        $('#plan_button').attr("style", " ");
+
+
+    }
+
+    function remove_red() {
+        div_1.classList.remove("error");
+        div_2.classList.remove("error");
+        div_3.classList.remove("error");
+        div_4.classList.remove("error");
+        div_5.classList.remove("error");
+
     }
 </script>
 
@@ -1171,6 +1584,90 @@
 
     .tab-card-header>.tab-content {
         padding-bottom: 0;
+    }
+
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0 0 50px;
+        color: #333;
+        font-size: 14px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    pre {
+        padding: 20px 20px 0 0;
+        background: #f9f9f9;
+        border: 1px solid #f2f2f2;
+        margin-bottom: 30px;
+        line-height: 2em;
+    }
+
+    .top {
+        background-color: #333;
+        border-bottom: 3px solid #00b3bc;
+        color: #fff;
+        padding: 20px;
+    }
+
+    .top h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /*
+        .container {
+            width: 80%;
+            margin: 70px auto;
+        }*/
+    .slider-container {
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto 50px;
+    }
+
+    .config {
+        border: 1px solid #f2f2f2;
+        margin-bottom: 30px;
+        line-height: 1.7em;
+    }
+
+    .config table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .config table td {
+        padding: 10px;
+        border-bottom: 1px solid #f2f2f2;
+    }
+
+    .config table tr:nth-child(even) td {
+        background-color: #f9f9f9;
+    }
+
+    .mb {
+        margin-bottom: 15px;
+    }
+
+    .label {
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .download {
+        margin-bottom: 20px;
+    }
+
+    .download a {
+        text-decoration: none;
+        color: #00969b;
+        font-size: 16px;
     }
 </style>
 

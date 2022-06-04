@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
@@ -44,6 +45,16 @@ class Students extends Migration
                 'default'=>'false'
             ],
             'password'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null' => false,
+            ],
+            'qr_location'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+                'null' => false,
+            ],
+            'password_qr'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'null' => false,

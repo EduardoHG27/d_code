@@ -10,9 +10,9 @@ use App\Models\PaysModel;
 use App\Entities\Student_ent;
 use App\Libraries\Datatable;
 use App\Libraries\PHPMailer_lib;
+use App\Libraries\qr;
 
-
-
+use function PHPUnit\Framework\isNull;
 
 class Student extends BaseController
 {
@@ -58,10 +58,6 @@ class Student extends BaseController
 
 
             //$pay_data = $paysModel->where('id_member', $data['id'])->findAll();
-
-
-
-
 
             if ($pay_data == null) {
                 $consulta['resp'] = '1';
@@ -157,13 +153,13 @@ class Student extends BaseController
             'username' => $this->request->getPost('username'),
             'password' => $this->request->getPost('password')
         ];
-        $email = trim($data['username']);
+        $nombre = trim($data['username']);
         //$password = trim($this->request->getVar('password'));
 
         $password = md5($data['password']);
         $model = model('StudetsModel');
 
-        if (!$user = $model->getUserBy('name', $email)) {
+        if (!$user = $model->getUserBy('name', $nombre)) {
 
             /* return redirect()->back()
                 ->with('msg', [
@@ -210,26 +206,14 @@ class Student extends BaseController
         }
     }
 
+   
     public function store()
     {
-
-
+        $qr = new qr();
         $mail = new PHPMailer_lib();
-
-      
-
-
-
-
-
         $year = date("Y");
         $studetsModel = new StudetsModel();
-        $data = [
-            'name' => $this->request->getPost('name'),
-            'email' => $this->request->getPost('email'),
-            'mobile' => $this->request->getPost('mobile'),
-            'password' => md5($this->request->getPost('password'))
-        ];
+
 
         $studetsModel->select('*');
         $studetsModel->where('name', $this->request->getPost('name'));
@@ -240,59 +224,74 @@ class Student extends BaseController
 
         if (empty($data_validation)) {
 
-          
 
-            if ($studetsModel->save($data)) {
-                $correo = $mail->load();
-                $correo->isSMTP();
-                $correo->Host = 'smtp.hostinger.com';
-                $correo->Port = 465;
-                $correo->SMTPOptions = array(
-                    'ssl' => array(
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                        'allow_self_signed' => true
-                    )
-                );
-             
-                $correo->SMTPAuth = true;
-                $correo->Username  = 'gym_service@gym-system.ecommerce343.com';
-                $correo->Password = 'Hergut27!';
-                $correo->SMTPSecure = 'ssl';
-                
-                $correo->setFrom('gym_service@gym-system.ecommerce343.com', 'CodexWorld');
-                $correo->addReplyTo($this->request->getPost('email'), 'Codexworld');
-                $correo->addAddress($this->request->getPost('email'));
-                $correo->Subject = 'Registro de Usuario Exitoso';
-                $correo->isHTML(true);
-                $mailcontent = "<h1>Bienvenido, Ya eres miembro!!</h1>
-                 <p>Tu contraseña para Ingresar es : </p>".$this->request->getPost('password');
-        
-                $correo->Body = $mailcontent;
-                
-                if($correo->send())
-                {
-                    $consulta['id'] = $studetsModel->insertID();
-                    $data = [
-                        'matricula' =>  $year . $consulta['id']
-                    ];
-                    $studetsModel->update($consulta['id'], $data);
-                    $consulta['resp'] = '1';
-    
-                   
-                    echo json_encode($consulta);
-                }
-                else
-                {
-                    $consulta['resp'] = '2';
-    
-                   
-                    echo json_encode($consulta);
-                }
-              
+
+            $correo = $mail->load();
+            $correo->isSMTP();
+            $correo->Host = 'smtp.gmail.com';
+            $correo->Port = 465;
+            $correo->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
+
+            $correo->SMTPAuth = true;
+            $correo->Username  = 'desarrollo.hergut@gmail.com';
+            // $correo->Password = 'Hergut27!';
+            $correo->Password = 'hergut27';
+            $correo->SMTPSecure = 'ssl';
+
+            $correo->setFrom('desarrollo.hergut@gmail.com', 'CodexWorld');
+            $correo->addReplyTo($this->request->getPost('email'), 'Codexworld');
+            $correo->addAddress($this->request->getPost('email'));
+            $correo->Subject = 'Registro de Usuario Exitoso';
+            $correo->isHTML(true);
+            $mailcontent = "<h1>Bienvenido, Ya eres miembro!!</h1>
+             <p>Tu contraseña para Ingresar es : </p>" . $this->request->getPost('password');
+
+            $correo->Body = $mailcontent;
+
+            if (!$correo->send()) {
+
+
+                $consulta['resp'] = '2';
+                $consulta['msj_error'] = $correo->ErrorInfo;
+                echo json_encode($consulta);
             } else {
 
-                $consulta['resp'] = '0';
+
+                $number = rand();
+
+
+
+                $loc = "qr/{$number}.png";
+                $location = FCPATH . $loc;
+
+
+                $resp = $qr->create_qr(md5($this->request->getPost('password')) . $number, $location);
+
+
+                $data = [
+                    'name' => $this->request->getPost('name'),
+                    'email' => $this->request->getPost('email'),
+                    'mobile' => $this->request->getPost('mobile'),
+                    'password' => md5($this->request->getPost('password')),
+                    'qr_location' => $loc,
+                    'password_qr' => md5($this->request->getPost('password')) . $number
+                ];
+
+                $studetsModel->save($data);
+                $consulta['id'] = $studetsModel->insertID();
+                $data = [
+                    'matricula' =>  $year . $consulta['id']
+                ];
+                $studetsModel->update($consulta['id'], $data);
+                $consulta['resp'] = '1';
+
+
                 echo json_encode($consulta);
             }
         } else {
@@ -312,10 +311,59 @@ class Student extends BaseController
         return $this->response->redirect(site_url('/users-list'));*/
     }
 
+    public function qr()
+    {
+        $studetsModel = new StudetsModel();
+        $data = [
+            'id' => $this->request->getPost('id')
+        ];
+
+        $studetsModel->select('name,matricula');
+        $studetsModel->where('password_qr', $this->request->getPost('id'));
+        $query = $studetsModel->get();
+        $data_validation = $query->getResult('array');
+
+        $dat=count($data_validation);
+        if ($dat=='0') {
+            $consulta['resp'] = '0';
+            $consulta['data'] = 'Código QR no reconocido';
+            echo json_encode($consulta);
+        } else {
+            
+            $consulta['resp'] = '1';
+            $consulta['data'] = $data_validation;
+            echo json_encode($consulta);
+        }
+    }
+
+    public function get_qr()
+    {
+        $studetsModel = new StudetsModel();
+        $data = [
+            'id' => $this->request->getPost('id')
+        ];
+
+
+        $data = $studetsModel->find($data['id']);
+
+
+        if ($data['qr_location'] == '') {
+            $consulta['resp'] = '0';
+            echo json_encode($consulta);
+        } else {
+
+            $consulta['resp'] = '1';
+            $consulta['data'] = $data['qr_location'];
+            echo json_encode($consulta);
+        }
+    }
+
     public function update()
     {
         $studetsModel = new StudetsModel();
+        $mail = new PHPMailer_lib();
         $id = $this->request->getVar('id');
+
         $data = [
             'name' => $this->request->getVar('name'),
             'email'  => $this->request->getVar('email'),
@@ -323,13 +371,43 @@ class Student extends BaseController
         ];
 
 
-        if ($studetsModel->update($id, $data)) {
+        $correo = $mail->load();
+        $correo->isSMTP();
+        $correo->Host = 'smtp.hostinger.com';
+        $correo->Port = 465;
+        $correo->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
 
-            $consulta['resp'] = '1';
+        $correo->SMTPAuth = true;
+        $correo->Username  = 'gym_service@gym-system.ecommerce343.com';
+        $correo->Password = 'Hergut27!';
+        $correo->SMTPSecure = 'ssl';
+
+        $correo->setFrom('gym_service@gym-system.ecommerce343.com', 'CodexWorld');
+        $correo->addReplyTo($this->request->getPost('email'), 'Codexworld');
+        $correo->addAddress($this->request->getPost('email'));
+        $correo->Subject = 'Registro de Usuario Exitoso';
+        $correo->isHTML(true);
+        $mailcontent = "<h1>Bienvenido, Ya eres miembro!!</h1>
+         <p>Tu contraseña para Ingresar es : </p>" . $this->request->getPost('password');
+
+        $correo->Body = $mailcontent;
+
+        if (!$correo->send()) {
+
+            $consulta['resp'] = '2';
+            $consulta['msj_error'] = $correo->ErrorInfo;
             echo json_encode($consulta);
         } else {
 
-            $consulta['resp'] = '0';
+            $studetsModel->update($id, $data);
+
+            $consulta['resp'] = '1';
             echo json_encode($consulta);
         }
     }
@@ -452,66 +530,147 @@ class Student extends BaseController
         echo json_encode($json_data);
     }
 
-    public function test()
+    public function dash()
     {
         $paysModel = new PaysModel();
-
-        
         $paysModel->select('cost,date_in');
         $paysModel->orderBy('date_in', 'ASC');
         $query = $paysModel->get();
         $get_total = $query->getResult('array');
+        $i = 0;
+        $j = 0;
+        $arr = [];
+        $suma = 0;
+        $data = count($get_total);
 
-        $i=0;
-        $j=0;
-        $arr=[];
-        $suma=0;
-        $data=count($get_total);
-       
+
         foreach ($get_total as $key => $value) {
-           
-           
-            if($i==$data-1)
-            {
-                $arr[$j]=$suma+$value['cost'];
-                $suma=0;
-            }
-            else
-            {   
-                $fecha=$value['date_in'];
+            if ($i == $data - 1) {
+                $arr[$j] = $suma + $value['cost'];
+                $suma = 0;
+            } else {
+                $fecha = $value['date_in'];
                 $pieces = explode("-", $fecha);
                 $pieces[1];
-                $fecha=$get_total[$i+1]['date_in'];
+                $fecha = $get_total[$i + 1]['date_in'];
                 $pieces_1 = explode("-", $fecha);
                 $pieces_1[1];
-     
-                if($pieces[1]==$pieces_1[1])
-                {
-                 $suma=$value['cost']+$suma;
-                }else
-                {
-                 $arr[$j]=$suma+$value['cost'];
-                 $suma=0;
-                 $j++;
+                if ($pieces[1] == $pieces_1[1]) {
+                    $suma = $value['cost'] + $suma;
+                } else {
+                    $arr[$j] = $suma + $value['cost'];
+                    $suma = 0;
+                    $j++;
                 }
                 $i++;
             }
-         
         }
+
+
+
 
         $arr_dat = array();
         foreach ($arr as $key => $value) {
-            $arr_dat[] =$value;
+            $arr_dat[] = $value;
         }
 
-    
-        
-       $data=[100, 100, 100, 100, 100, 100, 40];
-       $consulta['datos_entrada']=$data;
-       $consulta['datos_ingresos']=$arr_dat;
-       $consulta['resp'] = '1';
+        $mes = [];
+        $j = -1;
+        foreach ($get_total as $key => $value) {
+            $fecha = $value['date_in'];
+            $pieces = explode("-", $fecha);
+            $pieces[1];
 
-       echo json_encode($consulta);
+
+            if ($pieces[1] == '01') {
+                $mes[$j + 1] = 'Ene';
+            } else if ($pieces[1] == '02') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '02') {
+                    } else {
+                        $mes[$j + 2] = 'Feb';
+                    }
+                }
+            } else if ($pieces[1] == '03') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '03') {
+                    } else {
+                        $mes[$j + 3] = 'Mar';
+                    }
+                }
+            } else if ($pieces[1] == '04') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '04') {
+                    } else {
+                        $mes[$j + 4] = 'Abr';
+                    }
+                }
+            } else if ($pieces[1] == '05') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '05') {
+                    } else {
+                        $mes[$j + 5] = 'May';
+                    }
+                }
+            } else if ($pieces[1] == '06') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '06') {
+                    } else {
+                        $mes[$j + 6] = 'Jun';
+                    }
+                }
+            } else if ($pieces[1] == '07') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '07') {
+                    } else {
+                        $mes[$j + 7] = 'Jul';
+                    }
+                }
+            } else if ($pieces[1] == '08') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '08') {
+                    } else {
+                        $mes[$j + 8] = 'Ago';
+                    }
+                }
+            } else if ($pieces[1] == '09') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '09') {
+                    } else {
+                        $mes[$j + 9] = 'Sep';
+                    }
+                }
+            } else if ($pieces[1] == '10') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '10') {
+                    } else {
+                        $mes[$j + 10] = 'Oct';
+                    }
+                }
+            } else if ($pieces[1] == '11') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '11') {
+                    } else {
+                        $mes[$j + 11] = 'Nov';
+                    }
+                }
+            } else if ($pieces[1] == '12') {
+                foreach ($mes as $key => $value) {
+                    if ($value == '12') {
+                    } else {
+                        $mes[$j + 12] = 'Dic';
+                    }
+                }
+            }
+        }
+
+        $data = [100, 100, 100, 100, 100, 100, 40];
+        $consulta['datos_entrada'] = $data;
+        $consulta['datos_ingresos'] = $arr_dat;
+        $consulta['mes'] = $mes;
+        $consulta['resp'] = '1';
+
+        echo json_encode($consulta);
     }
 
 

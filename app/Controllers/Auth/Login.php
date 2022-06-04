@@ -115,7 +115,6 @@ class Login extends BaseController
     public function signin_in()
     {
         
-        
         if (!$this->validate([
             'username' => 'required',
             'password' => 'required'
@@ -131,6 +130,7 @@ class Login extends BaseController
         $password = md5($this->request->getVar('password'));
         //$model = model('UsersModel');
 
+        var_dump($email);
         $model = model('StudetsModel');
 
         if (!$user = $model->getUserBy('name', $email)) {

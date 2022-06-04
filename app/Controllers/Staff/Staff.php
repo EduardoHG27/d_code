@@ -8,8 +8,10 @@ use App\Models\StudetsModel;
 use App\Models\PlansModel;
 use App\Models\PaysModel;
 use App\Models\StaffModel;
+use App\Models\StaffscheduleModel;
 use App\Entities\Student_ent;
 use App\Libraries\Datatable;
+use App\Libraries\PHPMailer_lib;
 
 class Staff extends BaseController
 {
@@ -34,7 +36,7 @@ class Staff extends BaseController
 
     public function get_student()
     {
-        
+
         $studetsModel = new StudetsModel();
         $paysModel = new PaysModel();
 
@@ -100,13 +102,13 @@ class Staff extends BaseController
 
     public function delete()
     {
-        $studetsModel = new StudetsModel();
+        $staffModel = new StaffModel();
 
         $id = $this->request->getPost('id');
-        $studetsModel->where('id', $id);
+        $staffModel->where('id_staff', $id);
 
 
-        if ($studetsModel->delete()) {
+        if ($staffModel->delete()) {
             $consulta['resp'] = '1';
             echo json_encode($consulta);
         } else {
@@ -118,21 +120,94 @@ class Staff extends BaseController
 
     public function store()
     {
+        $mail = new PHPMailer_lib();
         $year = date("Y");
-        $studetsModel = new StudetsModel();
+        $staffModel = new StaffModel();
         $data = [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
             'mobile' => $this->request->getPost('mobile'),
+            'position' => $this->request->getPost('charge'),
             'password' => md5($this->request->getPost('password'))
         ];
 
-        if ($studetsModel->save($data)) {
-            $consulta['id'] = $studetsModel->insertID();
+
+        $staffModel->select('*');
+        $staffModel->where('name', $this->request->getPost('name'));
+        $staffModel->orWhere('email', $this->request->getPost('email'));
+        $query = $staffModel->get();
+        $data_validation = $query->getResult('array');
+
+        if (empty($data_validation)) {
+
+            $correo = $mail->load();
+            $correo->isSMTP();
+            $correo->Host = 'smtp.gmail.com';
+            $correo->Port = 465;
+            $correo->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
+
+            $correo->SMTPAuth = true;
+            //$correo->Username  = 'gym_service@gym-system.ecommerce343.com';
+            $correo->Username  = 'desarrollo.hergut@gmail.com';
+            //$correo->Password = 'Hergut27!';
+            $correo->Password = 'hergut27';
+            $correo->SMTPSecure = 'ssl';
+
+            $correo->setFrom('desarrollo.hergut@gmail.com', 'CodexWorld');
+            $correo->addReplyTo($this->request->getPost('email'), 'Codexworld');
+            $correo->addAddress($this->request->getPost('email'));
+            $correo->Subject = 'Registro de Usuario Exitoso';
+            $correo->isHTML(true);
+            $mailcontent = "<h1>Bienvenido, Ya eres miembro!!</h1>
+             <p>Tu contraseña para Ingresar es : </p>" . $this->request->getPost('password');
+
+            $correo->Body = $mailcontent;
+
+            if(!$correo->send()) {
+           
+
+                $consulta['resp'] = '2';
+                $consulta['msj_error'] = $correo->ErrorInfo;
+                echo json_encode($consulta);
+
+            } else {
+
+                $staffModel->save($data);
+                $consulta['id'] = $staffModel->insertID();
+              
+                $data = [
+                    'matricula_staff' =>  $year . $consulta['id']
+                ];
+                $staffModel->update($consulta['id'], $data);
+                $consulta['resp'] = '1';
+                echo json_encode($consulta);
+            }
+
+        } else {
+
+            $consulta['resp'] = '3';
+            echo json_encode($consulta);
+        }
+
+
+
+       
+        /*
+
+
+
+         if ($staffModel->save($data)) {
+            $consulta['id'] = $staffModel->insertID();
             $data = [
                 'matricula' =>  $year . $consulta['id']
             ];
-            $studetsModel->update($consulta['id'], $data);
+            $staffModel->update($consulta['id'], $data);
             $consulta['resp'] = '1';
             echo json_encode($consulta);
         } else {
@@ -141,7 +216,7 @@ class Staff extends BaseController
             echo json_encode($consulta);
         }
 
-        /*
+
         $studetsModel = new StudetsModel();
         $data = [
             'name' => $this->request->getVar('name'),
@@ -173,27 +248,29 @@ class Staff extends BaseController
         }
     }
 
+    public function schedule()
+    {
 
-    public function ajaxLoadData()
+        $staffModel = new StaffscheduleModel();
+        var_dump("data");
+    }
+
+    public function ajaxLoadDataStaff()
     {
         $staffModel = new StaffModel();
         $order = $_REQUEST['order'];
         $order = array_shift($_REQUEST['order']);
 
-       
+
         $columns = $_REQUEST['columns'];
 
-       
-        if($columns[4]['search']['value']=='2')
-        {    $columns[4]['search']['value']='false';
-               }else if($columns[4]['search']['value']=='1')
-        {
-            $columns[4]['search']['value']='true';
-        }
-        else
-        {
-            $columns[4]['search']['value']='';
- 
+
+        if ($columns[4]['search']['value'] == '2') {
+            $columns[4]['search']['value'] = 'false';
+        } else if ($columns[4]['search']['value'] == '1') {
+            $columns[4]['search']['value'] = 'true';
+        } else {
+            $columns[4]['search']['value'] = '';
         }
         $like = array(
             'matricula' => $columns[0]['search']['value'],
@@ -203,12 +280,10 @@ class Staff extends BaseController
             'status' => $columns[4]['search']['value']
         );
 
-
-
         $data = $staffModel->findAll();
         $total_count = $data;
 
-        $lib = new Datatable($staffModel, 'gp1', ['matricula_staff', 'name', 'email', 'mobile', 'status', 'position', 'password', 'created_at', 'updated_at', 'deleted_at']);
+        $lib = new Datatable($staffModel, 'gp1', ['id_staff', 'matricula_staff', 'name', 'email', 'mobile', 'status', 'position', 'password', 'created_at', 'updated_at', 'deleted_at']);
         $json_data = $lib->getResponse([
             'draw' => $_REQUEST['draw'],
             'length' => $_REQUEST['length'],
@@ -248,25 +323,26 @@ class Staff extends BaseController
 
 
 
-    public function get_plan()
+    public function get_staff()
     {
-        $planModel = new PlansModel();
-
-        $planModel->select('*');
-        $planModel->where('status', 'true');
-        $query = $planModel->get();
-
-
-        if ($data = $query->getResult('array')) {
-
-            $consulta['data'] = $data;
+        $staffModel = new StaffModel();
+        $data = [
+            'id' => $this->request->getPost('id')
+        ];
+        if($data = $staffModel->find($data['id']))
+        {
             $consulta['resp'] = '1';
+            $consulta['data'] = $data;
             echo json_encode($consulta);
-        } else {
-
+        }
+        else
+        {
             $consulta['resp'] = '0';
             echo json_encode($consulta);
         }
+        
+       
+       
     }
 
 
